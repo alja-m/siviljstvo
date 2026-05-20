@@ -174,4 +174,28 @@ h1, h2, h3, h4, h5, h6, .display-4 {
 .modal-header {
     background-color: $color-bg-light-purple;
     border-radius: 20px 20px 0 0;
-}
+    }
+
+    
+.image-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center; /* To bo slike centriralo vodoravno */
+        align-items: center;     /* To bo slike poravnalo po višini v isti liniji */
+        max-width: 1200px;       /* Omeji širino galerije na sredini zaslona */
+        margin: 0 auto;          /* Centrira celoten vsebnik na sredino strani */
+    }
+    
+/* 3. Ohranimo omejitev velikosti slik */
+.image-row img {
+        max-height: 250px;
+        width: auto;
+        display: block;
+        border: 1px solid #ddd;
+        object-fit: contain; }
+    
+.kostum-slika {
+            max-height: 250px !important; /* Še dodatno zmanjša pustne kostume */
+    }
