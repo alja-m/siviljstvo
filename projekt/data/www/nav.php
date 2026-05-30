@@ -9,7 +9,7 @@
                     <a class="nav-link" href="index.php">Domov</a>
                  </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="storitve.php">Storitve</a>
+                    <a class="nav-link" href="storitve.php">Storitve</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="galerija.php">Galerija</a>

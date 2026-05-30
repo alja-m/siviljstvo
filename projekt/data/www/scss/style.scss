@@ -1,0 +1,224 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$color-bg-light-purple: #EBE1EF;
+$color-bg-dark-purple: #DBCFDB;
+$color-active-pill: #E2D7E6;
+$color-text-dark: #333333;
+$color-page-bg: #F2FDFF;
+
+$font-headings: 'Playfair Display', serif;
+$font-text: 'Open Sans', sans-serif;
+
+body {
+    background-color: $color-page-bg;
+    color: $color-text-dark;
+    font-family: $font-text;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6, .display-4 {
+    font-family: $font-headings;
+    font-weight: 700;
+}
+
+.lead, h5.text-muted, .fw-bold, b, strong {
+    font-family: $font-text;
+    font-weight: 600;
+}
+
+.navbar {
+    background-color: $color-bg-light-purple !important;
+    padding: 0.9rem 0; // Zmanjšana višina celotne vrstice
+
+    .nav-link {
+        color: $color-text-dark !important;
+        padding: 0.3rem 1.2rem !important; // Ožji gumbi
+        margin: 0 0.3rem;
+        font-size: 0.85rem; // Manjša pisava
+        transition: all 0.2s ease-in-out;
+
+        &.active {
+            // Večji kontrast: uporaba temnejše vijolične namesto svetle
+            background-color: $color-bg-dark-purple; 
+            color: #000000 !important; // Črna pisava za boljši kontrast
+            border-radius: 50px;
+            font-weight: 700; // Bolj poudarjeno besedilo
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); // Rahla globina za boljšo vidnost
+        }
+
+        &:hover:not(.active) {
+            opacity: 0.7; // Rahlo zbledi ob prehodu z miško, če ni aktivno
+        }
+    }
+}
+
+.hero-section {
+    background-color: transparent !important;
+    padding: 0 !important;
+    
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+    }
+
+    .title-wrapper {
+        background-color: $color-bg-dark-purple;
+        padding: 1.5rem 0;
+        
+        .display-4 {
+            letter-spacing: 2px;
+            margin-bottom: 0.2rem;
+        }
+
+        .lead {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.testimonials {
+    background-color: $color-bg-dark-purple !important;
+    
+    .card {
+        background-color: #ffffff !important;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        height: 100%;
+        
+        .bi-person-circle {
+            color: #6c757d;
+        }
+    }
+}
+
+.contact-section {
+    form {
+        background-color: #ffffff !important;
+        padding: 2.5rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+}
+
+.btn-primary {
+    background-color: $color-bg-light-purple;
+    border: none;
+    color: $color-text-dark;
+    font-weight: 600;
+    padding: 0.7rem;
+
+    &:hover {
+        background-color: darken($color-bg-light-purple, 5%);
+        color: $color-text-dark;
+    }
+}
+
+.footer {
+    background-color: $color-bg-dark-purple !important;
+    color: $color-text-dark;
+}
+
+.map-section {
+    h3 {
+        font-family: $font-headings;
+        letter-spacing: 1px;
+    }
+
+    .map-responsive {
+        overflow: hidden;
+        border-radius: 15px; // Zaobljeni robovi kot pri obrazcu
+        height: 450px;
+        width: 100%;
+        border: 5px solid #ffffff; // Bel rob okoli zemljevida za lepši prehod
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+    }
+}
+
+.service-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        background-color: $color-bg-light-purple; // Nežen barvni prehod
+    }
+
+    i {
+        color: $color-text-dark;
+    }
+
+    .btn-link {
+        color: $color-text-dark;
+        font-weight: 600;
+        font-size: 0.85rem;
+    }
+}
+
+.modal-content {
+    background-color: $color-page-bg;
+    border-radius: 20px;
+}
+
+.modal-header {
+    background-color: $color-bg-light-purple;
+    border-radius: 20px 20px 0 0;
+    }
+
+    
+.image-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center; /* To bo slike centriralo vodoravno */
+        align-items: center;     /* To bo slike poravnalo po višini v isti liniji */
+        max-width: 1200px;       /* Omeji širino galerije na sredini zaslona */
+        margin: 0 auto;          /* Centrira celoten vsebnik na sredino strani */
+    }
+    
+/* 3. Ohranimo omejitev velikosti slik */
+.image-row img {
+        max-height: 250px;
+        width: auto;
+        display: block;
+        border: 1px solid #ddd;
+        object-fit: contain; }
+    
+.kostum-slika {
+            max-height: 250px !important; /* Še dodatno zmanjša pustne kostume */
+    }
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* To bo slike centriralo vodoravno */
+    align-items: center;     /* To bo slike poravnalo po višini v isti liniji */
+    max-width: 1200px;       /* Omeji širino galerije na sredini zaslona */
+    margin: 0 auto;          /* Centrira celoten vsebnik na sredino strani */
+}
+
+/* 3. Ohranimo omejitev velikosti slik */
+.image-row img {
+    max-height: 250px;
+    width: auto;
+    display: block;
+    border: 1px solid #ddd;
+    object-fit: contain; }
+
+.kostum-slika {
+        max-height: 250px !important; /* Še dodatno zmanjša pustne kostume */
+}

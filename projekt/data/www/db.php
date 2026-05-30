@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
+$servername = "podatkovna-baza";
+$username = "root";
+$password = "superVarnoGeslo";
 $dbname = "mydb";
 
 try {
