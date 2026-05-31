@@ -2,6 +2,10 @@
 
 include "db.php";
 
+$query= "SELECT id, ime, email, sporocilo FROM sporocilo"
+$stmt = $pdo -> prepare($query);
+$stmt->execute();
+
 ?>
 <!DOCTYPE html>
 <html lang="sl">
@@ -149,6 +153,36 @@ Naše storitve so namenjene posameznikom, folklornim skupinam, pevskim zborom, g
         </div>
     </div>
 </section>
+
+<section class="container"
+<?php$podatki=$stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+<table border="1">
+
+<thead>id</thead>
+<thead>ime</thead>
+<thead>priimek</thead>
+<thead>sporocilo</thead>
+
+            <?php
+            foreach ($podatki as $row){
+            ?>
+                <tr>
+                    <td><?=$row["id"]; ?></td>
+                    <td><?=htmlspecialchars [$row["ime"]]; ?></td>
+                    <td><?=htmlspecialchars [$row["priimek"]]; ?></td>
+                    <td><?=htmlspecialchars [$row["email"]]; ?></td>
+                    <td><?=htmlspecialchars [$row["sporocilo"]]; ?></td>
+            <?php
+            }
+            ?>
+
+    <h2>Moji podatki</h2>
+
+</tbody>
+    </table>
+</section>
+
     </main>
 
     <?php
