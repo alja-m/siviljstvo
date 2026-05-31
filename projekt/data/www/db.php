@@ -5,15 +5,15 @@ $password = "superVarnoGeslo";
 $dbname = "mydb";
 
 try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   echo "Connected successfully";
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
 
-if ($_SERVER[$REQUEST_METHOD] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
   $ime = $_POST["ime"];
   $priimek = $_POST["priimek"];
@@ -21,12 +21,12 @@ if ($_SERVER[$REQUEST_METHOD] === "POST") {
 
 
   $sql = "INSERT INTO uporabnik (ime, priimek, mail) VALUES (:ime, :priimek, :mail)";
-  $sql = $conn->prepare(sql);
+  $sql = $pdo->prepare(sql);
 
   $stmt->execute([
-    ":ime" => $ime;
-    ":priimek" => $priimek;
-    ":mail" => $mail;
+    ":ime" => $ime,
+    ":priimek" => $priimek,
+    ":mail" => $mail
 
   ]);
 
@@ -34,15 +34,15 @@ if ($_SERVER[$REQUEST_METHOD] === "POST") {
   echo "Podatki so poslani";
 }
 
-if ($_SERVER[$REQUEST_METHOD] === "POST") {
+if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
   $vsebina = $_POST["vsebina"];
   $datum_posiljanja = date["Y-m-d"];
   $TK_siviljstvo = intval["TK_siviljstvo"];
-  $TK_uporabnik = intval["TK_uporabnik"]
+  $TK_uporabnik = intval["TK_uporabnik"];
 
   $sql = "INSERT INTO sporocilo (vsebina, datum_posiljanja, TK_uporabnik, TK_siviljstvo) VALUES (?, ?, ?, ?)";
-  $sql = $conn->prepare(sql);
+  $sql = $pdo->prepare(sql);
 
   $stmt->execute([
     ":vsebina" => $vsebina,

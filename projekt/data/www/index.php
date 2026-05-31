@@ -2,7 +2,7 @@
 
 include "db.php";
 
-$query= "SELECT id, ime, email, sporocilo FROM sporocilo"
+$query= "SELECT ime_siviljstva FROM siviljstvo";
 $stmt = $pdo -> prepare($query);
 $stmt->execute();
 
@@ -155,7 +155,8 @@ Naše storitve so namenjene posameznikom, folklornim skupinam, pevskim zborom, g
 </section>
 
 <section class="container"
-<?php$podatki=$stmt->fetchAll(PDO::FETCH_ASSOC);
+<?php
+$podatki=$stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <table border="1">
 
